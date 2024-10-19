@@ -1,0 +1,29 @@
+/* Log in Page Front End look */
+
+/* Page color and layout */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.background {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #f0f0f0;
+    /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.titletext{
+    font-family: 'Nunito Sans', sans-serif;
+    size: 20px;
+    margin-top: 80px;
+    text-align: center;
+    color: #000000;
+}
+
+
+

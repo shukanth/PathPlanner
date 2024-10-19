@@ -1,14 +1,19 @@
 import './App.css';
 // import App1 from './landingPage';
 // import Footer from './footer';
-import Router from './router';
+import CreditList from './CreditList';
+import LogInPage from './LogInPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Router/>
-      {/* <Footer/> */}
-    </div>
+<Router>
+      <Routes>
+        <Route path="/" element={<LogInPage />} />
+        <Route path="/credit-list" element={<CreditList />} />
+      </Routes>
+    </Router>    </div>
   );
 }
 

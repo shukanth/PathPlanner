@@ -1,9 +1,17 @@
 import React, {useState} from 'react'
 import httpClient from './httpClient';
+import './LogInPageLook.css'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 
 function LogInPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
+    const navigate = useNavigate();  // useNavigate hook to navigate
+
+    const handleSubmit = () => {
+        navigate('/credit-list');
+    };
 
     const logInUser = async () => {
         try {
@@ -16,17 +24,20 @@ function LogInPage() {
             });
 
             console.log(response.data);
-        } catch (error) {
+    
+        } 
+        
+        catch (error) {
             console.error("Error logging in:", error);
         }
     };
 
     return (
-        <div>
-            <h1>Log Into Your Account</h1>
+        <div className='background'>
+            <h1 className='titletext'>Log Into Your Account</h1>
             <form>
                 <div>
-                    <label>Email: </label>
+                    <label>Username: </label>
                     <input 
                         type="text" 
                         value={email} 
@@ -43,7 +54,7 @@ function LogInPage() {
                         id=""
                     />
                 </div>
-                <button type="button" onClick={() => logInUser()}>Submit</button>
+                <button type="button" onClick={() => handleSubmit()}>Submit</button>
             </form>
         </div>
     )

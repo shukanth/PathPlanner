@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import httpClient from './httpClient';
 import './LogInPageLook.css'
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LogInPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+
     const navigate = useNavigate();  // useNavigate hook to navigate
 
     const handleSubmit = () => {
@@ -24,9 +24,9 @@ function LogInPage() {
             });
 
             console.log(response.data);
-    
-        } 
-        
+
+        }
+
         catch (error) {
             console.error("Error logging in:", error);
         }
@@ -38,19 +38,19 @@ function LogInPage() {
             <form>
                 <div>
                     <label>Username: </label>
-                    <input 
-                        type="text" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
+                    <input
+                        type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         id=""
                     />
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         id=""
                     />
                 </div>

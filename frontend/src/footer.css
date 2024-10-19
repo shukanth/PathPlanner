@@ -1,0 +1,82 @@
+/* src/Footer.css */
+
+/* Footer */
+.footer {
+    background-color: #8364e8;
+        /* Soft purple background */
+        color: #fff;
+        /* White text */
+        text-align: center;
+        padding: 15px 0;
+        border-top: 5px solid #8a6be6;
+        /* Slightly darker purple border */
+        margin-top: 40px;
+        transition: background-color 0.3s ease;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 50px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer:hover {
+    background-color: #8a6be6;
+    /* Hover color matching the header */
+}
+
+.footer-section ul li a:hover {
+    color: #8364e8;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 12px;
+}

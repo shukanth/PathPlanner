@@ -1,0 +1,239 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #f0f0f0;
+  /* Light gray background */
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8364e8;
+  /* Soft purple header */
+  color: #fff;
+  padding: 10px 20px;
+  border-bottom: 5px solid #8a6be6;
+  height: 60px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav .dropdown-button,
+.nav .login-button,
+.nav .signup-button {
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.nav .dropdown-button:hover,
+.nav .login-button:hover,
+.nav .signup-button:hover {
+  background-color: #8a6be6;
+  /* Border color for hover effect */
+}
+
+/* Main Content */
+.content {
+  display: flex;
+  margin: 20px;
+}
+
+.main-content {
+  flex: 2;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #000000;
+  height: 550px;
+  /* Dark blue-gray for headings */
+}
+
+.side-content {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2d3047;
+  height: 400px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #8a6be6;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: normal;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-button {
+  background-color: #8a6be6;
+}
+
+
+/* Log In Button */
+.nav .login-button {
+  color: #fff;
+  background-color: #3e3a3a;
+  /* Gray color */
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav .login-button:hover {
+  background-color: #707070;
+  /* Darker gray on hover */
+}
+
+/* Sign Up Button */
+.nav .signup-button {
+  color: #8364e8;
+  /* Soft purple for text */
+  background-color: #fff;
+  /* White background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav .signup-button:hover {
+  background-color: #e0e0e0;
+  /* Light gray on hover */
+}
+
+/* Get Started Button */
+.get-started {
+  display: flex;
+  justify-content: right;
+  margin: 20px;
+}
+
+.get-started-button {
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: #8364e8;
+  /* Match with header color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #7556d7;
+  transform: scale(1.02);
+  /* Slight scaling effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav .dropdown-button,
+  .nav .login-button,
+  .nav .signup-button {
+    padding: 10px;
+  }
+}

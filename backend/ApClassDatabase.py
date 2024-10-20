@@ -25,7 +25,7 @@ with sqlite3.connect('APCourses.sqlite') as connection:
           EXAMNAME TEXT,
           MINSCORE INTEGER,
           NUMCREDIT INTEGER,
-          EQUIVCOURSE TEXT
+          EQUIVCOURSE TEXT,
         );
         """)
         print("Table 'apcourses' created successfully.")

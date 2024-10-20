@@ -12,7 +12,8 @@ df.drop(columns=["Unnamed: 0"], inplace=True, errors='ignore')
 with sqlite3.connect('CourseRec.sqlite') as connection:
     crsr = connection.cursor()
 
-    # Check if the table exists before creating it
+
+    crsr.execute("DELETE FROM apcourses")
     crsr.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='courserec'")
     existing_table = crsr.fetchone()
 

@@ -1,0 +1,35 @@
+.box {
+    background-color: #c93737;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    align-items: center;
+    /* or 'absolute' */
+    bottom: 0;
+    width: 100%;
+    /* Takes up the full width */
+    height: 60px;
+    /* Adjust as needed for the height of the box */
+}
+
+
+.text {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* This makes the list items appear in a row */
+}
+
+/* Style for list items */
+ul li {
+    margin: 0 10px;
+    /* Adjust spacing between items */
+}

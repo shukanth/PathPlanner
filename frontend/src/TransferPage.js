@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './TransferPage.css'; // Import the CSS file
+import TabNav from './TabNav';
 
 function TransferPage() {
     const [apgrade, setApgrade] = useState({ course: '', grade: '', credits: '' });
@@ -47,6 +48,8 @@ function TransferPage() {
     return (
         <div className="container">
             <h1>Transfer Credits</h1>
+
+            <TabNav />
 
             <div>
                 <h2>AP Courses</h2>

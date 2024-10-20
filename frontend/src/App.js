@@ -15,7 +15,6 @@ function App() {
           <Route path="/" element={<App1 />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/transfer-page" element={<TransferPage />} />
-          <Route path="/test-backend" element={<Backend />} />
           <Route path="/schedule-plan" element={<SchedulePlan />} />
           <Route path="/credit-list" element={<CourseList />} />
         </Routes>

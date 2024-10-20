@@ -1,0 +1,36 @@
+ID,Subject,Number,Course Title,Credit Hours
+1,CSE,1222,Introduction to Computer Programming in C++ for Engineers and Scientists,3
+2,CSE,1223,Introduction to Computer Programming in Java,3
+3,CSE,1224,Introduction to Computer Programming in Python,3
+4,CSE,2221,Software I: Software Components,4
+5,CSE,2231,Software II: Software Development and Design,4
+6,CSE,2321,Foundations I: Discrete Structures,3
+7,CSE,2331,Foundations II: Data Structures and Algorithms,3
+8,CSE,2421,Systems I: Introduction to Low-Level Programming and Computer Organization,4
+9,CSE,2431,Systems II: Introduction to Operating Systems,3
+10,CSE,2501,"Social, Ethical, and Professional Issues in Computing",1
+11,CSE,3341,Principles of Programming Languages,3
+12,CSE,3421,Introduction to Computer Architecture,3
+13,CSE,3461,Computer Networking and Internet Technologies,3
+14,CSE,3521,Survey of Artificial Intelligence I: Basic Techniques,3
+15,CSE,3541,Computer Game and Animation Techniques,3
+16,CSE,3901,"Project: Design, Development, and Documentation of Web Applications",4
+17,CSE,3902,"Project: Design, Development, and Documentation of Interactive Systems",4
+18,CSE,3903,"Project: Design, Development, and Documentation of System Software",4
+19,CSE,5911,Capstone Design: Software Applications,4
+20,CSE,5912,Capstone Design: Game Design and Development,4
+21,CSE,5913,Capstone Design: Computer Animation,4
+22,CSE,5914,Capstone Design: Knowledge-Based Systems,4
+23,CSE,5915,Capstone Design: Information Systems,4
+24,CSE,5916,Capstone Design: Research-Focused Projects,4
+25,MATH,1151,Calculus 1,5
+26,MATH,1172,Engineering Math A,5
+27,MATH,2568,Linear Algebra,4
+28,MATH,3345,Foundations of Higher Math,3
+29,STAT,3470,Introduction to Probability and Statistics for Engineers,3
+30,PHYSICS,1250,Calculus-Based Physics I,5
+31,ECE,2020,Introduction to Analog Systems and Circuits,3
+32,ECE,2060,Introduction to Digital Logic,3
+33,ENGR,1100,Introduction to Ohio State and Engineering,1
+34,ENGR,1181,Fundamentals of Engineering I,2
+35,ENGR,1182,Fundamentals of Engineering II,2

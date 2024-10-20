@@ -28,7 +28,6 @@ function App1() {
       </header>
       {/* Main Content */}
       <div className="content">
-        <div className="main-content"><img style={{ width: '650px', height: '390px' }} src="/ui.JPG" alt="" /></div>
         <div className="side-content">
           <b style={{ fontSize: '25px', marginBottom: '35px' }}>Start your degree early!</b>
           <div>Your journey to college starts here! At College Path Planner, we help high school students map out their academic schedules to ensure they meet college admissions requirements with ease. Whether you’re aiming for a top-tier university or just want to be prepared for what’s next, our platform simplifies the process.</div>

@@ -10,7 +10,7 @@ function LogInPage() {
     const navigate = useNavigate();  // useNavigate hook to navigate
 
     const handleSubmit = () => {
-        navigate('/credit-list');
+        navigate('/transfer-page');
     };
 
     const logInUser = async () => {

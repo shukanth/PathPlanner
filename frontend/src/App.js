@@ -1,10 +1,11 @@
 import './App.css';
 import App1 from './landingPage';
 // import Footer from './footer';
-import CreditList from './CreditList';
+import CourseList from './CourseList';
 import LogInPage from './LogInPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import SchedulePlan from './SchedulePlan';
+import TransferPage from './TransferPage';
 function App() {
   return (
     <div className="App">
@@ -12,7 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<App1 />} />
           <Route path="/login" element={<LogInPage />} />
-          <Route path="/credit-list" element={<CreditList />} />
+          <Route path="/transfer-page" element={<TransferPage />} />
+          <Route path="/schedule-plan" element={<SchedulePlan />} />
+          <Route path="/credit-list" element={<CourseList />} />
         </Routes>
       </Router>    </div>
   );

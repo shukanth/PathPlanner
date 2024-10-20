@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import sqlite3
+import json
 from flask_cors import CORS
 
 
@@ -42,18 +43,23 @@ def get_course_recs():
             # Format the result as a list of dictionaries to return as JSON
             course_list = []
             for course in course_recs:
+                # Convert the PRERECS field (text) into an array
+                prerecs_array = json.loads(course[5]) if course[5] else []
+
                 course_dict = {
                     'id': course[0],
                     'subject': course[1],
                     'course_number': course[2],
                     'course_name': course[3],
-                    'num_credit': course[4]
+                    'num_credit': course[4],
+                    'prerequisites': prerecs_array
                 }
                 course_list.append(course_dict)
 
             return jsonify(course_list)
     except sqlite3.OperationalError as e:
         return jsonify({"error": str(e)}), 500
+    
 
 # Basic index route
 @app.route('/')

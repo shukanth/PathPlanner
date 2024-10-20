@@ -11,7 +11,7 @@ export default function TabNav() {
                     <a href="/schedule-plan" className="text">Schedule Plan</a>
                 </li>
                 <li>
-                    <a href="/credit-list" className="text">My Courses</a>
+                    <a href="/credit-list" className="text">Course List</a>
                 </li>
             </ul>
         </nav>

@@ -2,40 +2,53 @@ import React, { useState, useEffect } from 'react';
 import './TransferPage.css'; // Import the CSS file
 import TabNav from './TabNav';
 
+export function getEquivalentCourses(addedCourses) {
+    return addedCourses.map(course => course.credits); // Modify as necessary to get the desired information
+}
+
 function TransferPage() {
-    const [apgrade, setApgrade] = useState({ course: '', grade: '', credits: '' });
-    const [osuClasses, setOsuClasses] = useState({ course: '', grade: '', credits: '' });
+    const [apgrade, setApgrade] = useState({ course: '', grade: '' });
+    const [osuClasses, setOsuClasses] = useState({ course: '', grade: '' });
     const [addedCourses, setAddedCourses] = useState([]);
     const [apCourses, setApCourses] = useState([]);
+    const [availableCourses, setAvailableCourses] = useState([]); // New state for available courses
 
-    // Fetch AP Courses from the Flask backend
+    // Fetch AP Courses and Available Courses from the Flask backend
     useEffect(() => {
         fetch('http://127.0.0.1:5000/api/apcourses')
             .then(response => response.json())
             .then(data => setApCourses(data))
             .catch(error => console.error('Error fetching AP courses:', error));
+
+        // Fetch all available courses
+        fetch('http://127.0.0.1:5000/api/availablecourses') // Adjust endpoint as needed
+            .then(response => response.json())
+            .then(data => setAvailableCourses(data))
+            .catch(error => console.error('Error fetching available courses:', error));
     }, []);
 
-    // Get the equivalent course for the selected AP course
-    const findEquivCourse = (apCourseName) => {
-        const course = apCourses.find(c => c.exam_name === apCourseName);
+    const findEquivCourse = (apCourseName, examScore) => {
+        const examScoreInt = parseInt(examScore, 10);
+        const course = apCourses.find(c => c.exam_name === apCourseName && c.min_score === examScoreInt);
         return course ? course.equiv_course : 'No Equivalent Found';
     };
 
     // Add AP Credit to the table
     const handleAddApCredit = () => {
         if (apgrade.course && apgrade.grade) {
-            const equivCourse = findEquivCourse(apgrade.course); // Get equivalent course from API data
-            setAddedCourses([...addedCourses, { type: 'AP Credit', course: apgrade.course, grade: apgrade.grade, credits: equivCourse }]);
-            setApgrade({ course: '', grade: '', credits: '' });
+            const equivCourse = findEquivCourse(apgrade.course, apgrade.grade);
+            const newCourse = { type: 'AP Credit', course: apgrade.course, grade: apgrade.grade, credits: equivCourse };
+            setAddedCourses([...addedCourses, newCourse]);
+            setApgrade({ course: '', grade: '' }); // Reset input fields
         }
     };
 
     // Add OSU Class to the table
     const handleAddOsuClass = () => {
         if (osuClasses.course && osuClasses.grade) {
-            setAddedCourses([...addedCourses, { type: 'OSU Class', course: osuClasses.course, grade: osuClasses.grade, credits: osuClasses.course }]);
-            setOsuClasses({ course: '', grade: '', credits: '' });
+            const newCourse = { type: 'OSU Class', course: osuClasses.course, grade: osuClasses.grade, credits: osuClasses.course };
+            setAddedCourses([...addedCourses, newCourse]);
+            setOsuClasses({ course: '', grade: '' }); // Reset input fields
         }
     };
 
@@ -43,6 +56,11 @@ function TransferPage() {
     const handleDelete = (index) => {
         const newCourses = addedCourses.filter((_, i) => i !== index);
         setAddedCourses(newCourses);
+    };
+
+    // Check if a course has been added
+    const isCourseTaken = (courseName) => {
+        return addedCourses.some(course => course.course === courseName);
     };
 
     return (
@@ -53,17 +71,12 @@ function TransferPage() {
 
             <div>
                 <h2>AP Courses</h2>
-                <select
+                <input
+                    type="text"
+                    placeholder="AP Course Name"
                     value={apgrade.course}
                     onChange={(e) => setApgrade({ ...apgrade, course: e.target.value })}
-                >
-                    <option value="">Select AP Course</option>
-                    {apCourses.map((course, index) => (
-                        <option key={index} value={course.exam_name}>
-                            {course.exam_name}
-                        </option>
-                    ))}
-                </select>
+                />
                 <input
                     type="text"
                     placeholder="Exam Score"
@@ -89,7 +102,6 @@ function TransferPage() {
                 />
                 <button onClick={handleAddOsuClass}>Add OSU Class</button>
             </div>
-
             <div style={{ marginTop: '20px' }}>
                 <h2>Added Courses</h2>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>

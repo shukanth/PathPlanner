@@ -7,3 +7,6 @@ A web application that helps prospective Ohio State Computer Science students de
 Front-end: React.js<br />
 Back-end: Flask<br />
 Database: SQLite<br />
+
+##
+Completed by: Shukanth, Kanishk, Nithin, and Sharva

@@ -59,6 +59,20 @@ This project simplifies the academic journey for high school students, providing
 - 🌐 **Progressive Web App (PWA) Capabilities:** Enhances usability across devices with offline capabilities and a native-like experience.
 
 ---
+---
+
+## Contributors
+
+Meet the team behind PathPlanner:
+
+- **Shukanth Jojodae**
+- **Kanishk Kovuru**
+- **Sharva Deodhar**
+- **Nithin Seelan**
+
+We collaborated on ideation, design, and development to create a seamless academic planning experience for students.
+
+---
 
 ## Getting Started
 
